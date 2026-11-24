@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrar — Nós</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site">
+    <a class="wordmark" href="index.html"><em>N</em>ós</a>
+  </header>
+
+  <main>
+    <div class="auth-card">
+      <div class="tabs" role="tablist" aria-label="Tipo de acesso">
+        <button class="tab-btn" id="tabNoivo" role="tab" aria-selected="true" aria-controls="panelNoivo" data-tab="noivo">Noivos</button>
+        <button class="tab-btn" id="tabFornecedor" role="tab" aria-selected="false" aria-controls="panelFornecedor" data-tab="fornecedor">Fornecedores</button>
+      </div>
+
+      <!-- ===================== NOIVOS ===================== -->
+      <section class="tab-panel active" id="panelNoivo" role="tabpanel" aria-labelledby="tabNoivo">
+        <p class="panel-intro">
+          <strong>Para noivos</strong>
+          Encontre fornecedores avaliados perto de você, organize orçamento, lista de convidados e lista de presentes — tudo em um só lugar, do primeiro contato ao grande dia.
+        </p>
+
+        <div class="feedback" data-feedback="noivo-login"></div>
+
+        <!-- Login -->
+        <form class="auth-form active" data-form="login" data-role="noivo">
+          <div class="field">
+            <label for="noivoLoginEmail">E-mail</label>
+            <input type="email" id="noivoLoginEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="noivoLoginSenha">Senha</label>
+            <input type="password" id="noivoLoginSenha" name="password" autocomplete="current-password" required />
+          </div>
+          <div class="row-between">
+            <button type="button" class="link-btn" data-open-forgot="noivo">Esqueci minha senha</button>
+          </div>
+          <button type="submit" class="btn-primary">Entrar</button>
+          <div class="divider">ou</div>
+          <button type="button" class="btn-secondary" data-switch-to="signup" data-role="noivo">Cadastre-se como noivo(a)</button>
+        </form>
+
+        <!-- Signup -->
+        <form class="auth-form" data-form="signup" data-role="noivo">
+          <div class="feedback" data-feedback="noivo-signup"></div>
+          <div class="field">
+            <label for="noivoNome">Nome completo</label>
+            <input type="text" id="noivoNome" name="full_name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="noivoSignupEmail">E-mail</label>
+            <input type="email" id="noivoSignupEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="noivoSignupSenha">Senha</label>
+            <input type="password" id="noivoSignupSenha" name="password" autocomplete="new-password" required data-pw-target="noivoSignupHints" />
+            <div class="pw-hints" id="noivoSignupHints">
+              <span data-rule="len"><span class="dot"></span>8+ caracteres</span>
+              <span data-rule="letter"><span class="dot"></span>uma letra</span>
+              <span data-rule="digit"><span class="dot"></span>um número</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="noivoSignupSenha2">Confirmar senha</label>
+            <input type="password" id="noivoSignupSenha2" name="password2" autocomplete="new-password" required />
+          </div>
+          <button type="submit" class="btn-primary">Criar conta</button>
+          <p class="switch-line">Já tem conta? <button type="button" class="link-btn" data-switch-to="login" data-role="noivo">Entrar</button></p>
+        </form>
+      </section>
+
+      <!-- ===================== FORNECEDORES ===================== -->
+      <section class="tab-panel" id="panelFornecedor" role="tabpanel" aria-labelledby="tabFornecedor">
+        <p class="panel-intro">
+          <strong>Para fornecedores</strong>
+          Cadastre seu negócio, fique visível para casais buscando fornecedores na sua região e organize os serviços que você oferece em um painel só seu.
+        </p>
+
+        <div class="feedback" data-feedback="fornecedor-login"></div>
+
+        <!-- Login -->
+        <form class="auth-form active" data-form="login" data-role="fornecedor">
+          <div class="field">
+            <label for="fornecedorLoginEmail">E-mail</label>
+            <input type="email" id="fornecedorLoginEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="fornecedorLoginSenha">Senha</label>
+            <input type="password" id="fornecedorLoginSenha" name="password" autocomplete="current-password" required />
+          </div>
+          <div class="row-between">
+            <button type="button" class="link-btn" data-open-forgot="fornecedor">Esqueci minha senha</button>
+          </div>
+          <button type="submit" class="btn-primary">Entrar</button>
+          <div class="divider">ou</div>
+          <button type="button" class="btn-secondary" data-switch-to="signup" data-role="fornecedor">Cadastre-se como fornecedor</button>
+        </form>
+
+        <!-- Signup -->
+        <form class="auth-form" data-form="signup" data-role="fornecedor">
+          <div class="feedback" data-feedback="fornecedor-signup"></div>
+          <div class="field">
+            <label for="fornecedorNome">Seu nome</label>
+            <input type="text" id="fornecedorNome" name="full_name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="fornecedorNegocio">Nome do negócio</label>
+            <input type="text" id="fornecedorNegocio" name="business_name" autocomplete="organization" required />
+          </div>
+          <div class="field">
+            <label for="fornecedorSignupEmail">E-mail</label>
+            <input type="email" id="fornecedorSignupEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="fornecedorSignupSenha">Senha</label>
+            <input type="password" id="fornecedorSignupSenha" name="password" autocomplete="new-password" required data-pw-target="fornecedorSignupHints" />
+            <div class="pw-hints" id="fornecedorSignupHints">
+              <span data-rule="len"><span class="dot"></span>8+ caracteres</span>
+              <span data-rule="letter"><span class="dot"></span>uma letra</span>
+              <span data-rule="digit"><span class="dot"></span>um número</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fornecedorSignupSenha2">Confirmar senha</label>
+            <input type="password" id="fornecedorSignupSenha2" name="password2" autocomplete="new-password" required />
+          </div>
+          <button type="submit" class="btn-primary">Criar conta</button>
+          <p class="switch-line">Já tem conta? <button type="button" class="link-btn" data-switch-to="login" data-role="fornecedor">Entrar</button></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== FORGOT PASSWORD MODAL ===================== -->
+  <div class="modal-backdrop" id="forgotBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+      <button class="modal-close" id="forgotClose" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+      </button>
+
+      <h2 id="forgotTitle">Esqueci minha senha</h2>
+
+      <!-- Step 1: e-mail -->
+      <div class="modal-step active" id="forgotStep1">
+        <p class="modal-sub">Informe o e-mail cadastrado para redefinir sua senha.</p>
+        <div class="feedback" data-feedback="forgot-check"></div>
+        <div class="field">
+          <label for="forgotEmail">E-mail</label>
+          <input type="email" id="forgotEmail" autocomplete="email" required />
+        </div>
+        <button type="button" class="btn-primary" id="forgotCheckBtn">Verificar e-mail</button>
+      </div>
+
+      <!-- Step 2: nova senha -->
+      <div class="modal-step" id="forgotStep2">
+        <p class="modal-sub">E-mail encontrado. Defina sua nova senha.</p>
+        <div class="feedback" data-feedback="forgot-reset"></div>
+        <div class="field">
+          <label for="forgotNovaSenha">Nova senha</label>
+          <input type="password" id="forgotNovaSenha" autocomplete="new-password" data-pw-target="forgotHints" />
+          <div class="pw-hints" id="forgotHints">
+            <span data-rule="len"><span class="dot"></span>8+ caracteres</span>
+            <span data-rule="letter"><span class="dot"></span>uma letra</span>
+            <span data-rule="digit"><span class="dot"></span>um número</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="forgotNovaSenha2">Confirmar nova senha</label>
+          <input type="password" id="forgotNovaSenha2" autocomplete="new-password" />
+        </div>
+        <button type="button" class="btn-primary" id="forgotResetBtn">Redefinir senha</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
